@@ -22,7 +22,7 @@ $vm_count = "25"
     write-host "Configuration of $VM_Name complete"
 }
 ```
-#Make sure to restart VMs after configuration
+## Make sure to restart VMs after configuration
 
 # Ubuntu Metasploitable JuiceShop Setup
 ```powershell
