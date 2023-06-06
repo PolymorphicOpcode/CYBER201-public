@@ -23,10 +23,10 @@ $vm_count = "25"
             Invoke-VMScript -vm (get-vm -Name $VM_name) -ScriptText ([string]::Format("echo 'address 10.0.2.{0}2/24' >> /etc/network/interfaces && echo 'root:Mystery.{0}2' | sudo chpasswd", $y)) -GuestUser 'vagrant' -GuestPassword 'INSERT_PASSWORD_HERE' -ScriptType Bash
         }
         "mrRobot Template" {
-            Invoke-VMScript -vm (get-vm -Name $VM_name) -ScriptText ([string]::Format("echo 'address 10.0.2.{0}2/24' >> /etc/network/interfaces && echo 'root:Mystery.{0}2' | sudo chpasswd", $y)) -GuestUser 'vagrant' -GuestPassword 'INSERT_PASSWORD_HERE' -ScriptType Bash
+            Invoke-VMScript -vm (get-vm -Name $VM_name) -ScriptText ([string]::Format("echo 'address 10.0.2.{0}2/24' >> /etc/network/interfaces && echo 'root:Mystery.{0}2' | sudo chpasswd", $y)) -GuestUser 'root' -GuestPassword 'INSERT_PASSWORD_HERE' -ScriptType Bash
         }
         "sickos Template" {
-            Invoke-VMScript -vm (get-vm -Name $VM_name) -ScriptText ([string]::Format("echo 'address 10.0.2.{0}2/24' >> /etc/network/interfaces && echo 'root:Mystery.{0}2' | sudo chpasswd", $y)) -GuestUser 'vagrant' -GuestPassword 'INSERT_PASSWORD_HERE' -ScriptType Bash
+            Invoke-VMScript -vm (get-vm -Name $VM_name) -ScriptText ([string]::Format("echo 'address 10.0.2.{0}2/24' >> /etc/network/interfaces && echo 'root:Mystery.{0}2' | sudo chpasswd", $y)) -GuestUser 'root' -GuestPassword 'INSERT_PASSWORD_HERE' -ScriptType Bash
         }
         "Template ICA1" {
             Invoke-VMScript -vm (get-vm -Name $VM_name) -ScriptText ([string]::Format("echo 'address 10.0.2.{0}2/24' >> /etc/network/interfaces && echo 'root:Mystery.{0}2' | sudo chpasswd", $y)) -GuestUser 'vagrant' -GuestPassword 'INSERT_PASSWORD_HERE' -ScriptType Bash
