@@ -11,9 +11,11 @@ $vm_count = "25"
     $VM_name= "Mystery." + $y + "2"
     $x = Get-Random -Minimum 0 -Maximum 4
 
-    $create = new-VM -Template (Get-Template -Location 'Godfrey' -Name $boxes[$x]) -Name $VM_name -VMHost '10.11.175.103' -Datastore 'UCS ESXi v101 - SMIF700' -Location "Mystery .2" -ResourcePool "CIT-Instructors" -DiskStorageFormat Thin -confirm:$false
+    new-VM -Template (Get-Template -Location 'Godfrey' -Name $boxes[$x]) -Name $VM_name -VMHost '10.11.175.103' -Datastore 'UCS ESXi v101 - SMIF700' -Location "Mystery .2" -ResourcePool "CIT-Instructors" -DiskStorageFormat Thin -confirm:$false
 
-    Wait-Task -Task $create
+    $start = Start-VM -VM $VM_name -confirm:$false
+
+    Wait-Task -Task $start
     write-host "Creation of VM $VM_name completed"
 
     switch ($boxes[$x]) {
